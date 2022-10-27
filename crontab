@@ -1,0 +1,1 @@
+* * * * * /usr/bin/flock -n /tmp/synthetic.lockfile /bin/bash -c "source /etc/environment && /opt/robotframework/bin/run-tests-in-virtual-screen.sh > /opt/robotframework/temp/out.txt 2>&1"

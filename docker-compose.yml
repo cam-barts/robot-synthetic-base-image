@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+    robot-framework:
+        image: cambarts/robot-synthetic-base
+        volumes:
+            - './reports:/opt/robotframework/reports'
+            - './Synthetics:/opt/robotframework/tests'
+        env_file: .env
+        shm_size: 2g
+    web:
+        image: httpd
+        volumes:
+            - './reports:/usr/local/apache2/htdocs/'
+        ports:
+            - "8000:80"
